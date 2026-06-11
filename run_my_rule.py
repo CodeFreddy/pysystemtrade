@@ -1,4 +1,4 @@
-"""作业 1 验收脚本：把 my_rules.my_forecast 挂进 chapter15 系统，做三项检查。
+r"""作业 1 验收脚本：把 my_rules.my_forecast 挂进 chapter15 系统，做三项检查。
 
 运行（在仓库根目录）：
     $env:PYTHONIOENCODING='utf-8'; .venv\Scripts\python.exe run_my_rule.py
@@ -7,6 +7,10 @@
 import logging
 
 logging.disable(logging.CRITICAL)  # 压制冗长日志
+
+import matplotlib
+
+matplotlib.use("Agg")  # 无窗口后端：不弹图，直接存 PNG
 
 from systems.provided.futures_chapter15.basesystem import futures_system
 from systems.trading_rules import TradingRule
